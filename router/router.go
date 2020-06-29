@@ -1,20 +1,10 @@
 package router
 
 import (
-	"github.com/taek-n-ta-tn/Alleria/app/pay/demo"
-	"github.com/taek-n-ta-tn/Alleria/app/hello"
-	"github.com/taek-n-ta-tn/Alleria/app/sys/captcha"
-	"github.com/taek-n-ta-tn/Alleria/app/sys/configs"
-	"github.com/taek-n-ta-tn/Alleria/app/sys/dept"
-	"github.com/taek-n-ta-tn/Alleria/app/sys/dict"
-	"github.com/taek-n-ta-tn/Alleria/app/sys/dictData"
-	"github.com/taek-n-ta-tn/Alleria/app/sys/menu"
-	"github.com/taek-n-ta-tn/Alleria/app/sys/post"
-	"github.com/taek-n-ta-tn/Alleria/app/sys/role"
-	"github.com/taek-n-ta-tn/Alleria/app/sys/upload"
-	"github.com/taek-n-ta-tn/Alleria/app/sys/user"
 	"github.com/gogf/gf/frame/g"
 	"github.com/gogf/gf/net/ghttp"
+	"github.com/taek-n-ta-tn/Alleria/app/hello"
+	"github.com/taek-n-ta-tn/Alleria/app/pay/demo"
 )
 
 func MiddlewareCORS(r *ghttp.Request) {
