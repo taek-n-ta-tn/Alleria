@@ -4,9 +4,9 @@
 
 [database]
     [[database.default]]
-            host         = "39.105.69.149"
+            host         = "127.0.0.1"
             port         = "3306"
             user         = "root"
-            pass         = "zskj123456"
-            name         = "rat"
+            pass         = "root"
+            name         = "alleria"
             type         = "mysql"
