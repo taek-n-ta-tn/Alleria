@@ -59,7 +59,7 @@ func (c *Controller) DoRule(r *ghttp.Request) {
 	}
 	matherStr := r.GetString("matcher")
 	if matherStr == "" {
-		response.JsonERR(r, "entry must be exist")
+		response.JsonERR(r, "matcher must be exist")
 	}
 
 	var mapResult map[string]interface{}
