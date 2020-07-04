@@ -1,6 +1,7 @@
 package demo
 
 import (
+	"encoding/json"
 	"fmt"
 	"github.com/caibirdme/yql"
 	"github.com/gogf/gf/net/ghttp"
@@ -49,4 +50,26 @@ func (c *Controller) Rule(r *ghttp.Request) {
 	//true
 	//false
 	//true
+}
+
+func (c *Controller) DoRule(r *ghttp.Request) {
+	rawYQL := r.GetString("entry")
+	if rawYQL == "" {
+		response.JsonERR(r, "entry must be exist")
+	}
+	matherStr := r.GetString("matcher")
+	if matherStr == "" {
+		response.JsonERR(r, "entry must be exist")
+	}
+
+	var mapResult map[string]interface{}
+	err := json.Unmarshal([]byte(matherStr), &mapResult)
+	if err != nil {
+		fmt.Println("JsonToMapDemo err: ", err)
+		response.JsonERR(r, "JsonToMapDemo err: ")
+	}
+
+	ruler, _ := yql.Rule(rawYQL)
+	result, _ := ruler.Match(mapResult)
+	fmt.Println(result)
 }
